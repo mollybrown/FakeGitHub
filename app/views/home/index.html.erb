@@ -1,4 +1,4 @@
 <h1>Sign in to GitHub</h1>
 
 <%= link_to "Sign In",
-"https://github.com/login/oauth/authorize?client_id=#{'GITHUB_KEY'}&scope=repo" %>
+"https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_KEY']}&scope=repo" %>
