@@ -1,7 +1,39 @@
-HEY, LOOK AT YOU ALL LOGGED IN
-
-<%= @user_stuff %>
-
-
-<button class="btn" type="button">Button button</button>
-<a class="btn" href="#" role="button">Link button</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="nav navbar-nav navbar-right">
+      <a href="#">Repositories <span class="badge"><%= @repositories.count %></span></a>
+      <a href="#">Starred <span class="badge"><%= @starred.count %></span></a>
+      <a href="#">Followers <span class="badge"><%= @followers.count %></span></a>
+      <a href="#">Following <span class="badge"><%= @following.count %></span></a>
+    </div>
+  </div>
+</nav>
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="avatar">
+          <%= image_tag(@avatar) %>
+          <h3><%= @name %></h3>
+          <h4><%= @username %></h4>
+          <h4>Organizations</h4>
+            <% @organizations.each do |org| %>
+              <li><%= org %></li>
+            <% end %>
+        </div>
+        <hr>
+      </div>
+      <div class="col-md-8">
+        <h1>Recent Activity/Commits</h1>
+          <% @commits.each do |commit| %>
+            <%= commit %>
+          <% end %>
+        <hr>
+        <h1>Repositories</h1>
+          <% @repositories.each do |repo| %>
+            <li><%= repo[:name] %></li>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

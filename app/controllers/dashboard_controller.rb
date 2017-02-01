@@ -1,8 +1,17 @@
 class DashboardController < ApplicationController
   def index
     user = User.find(session[:user_id])
-    @user_stuff = User.user_info(user)
-    render json: @user_stuff.body
+    user_stuff = User.user_info(user)
+    @name = user_stuff[:name]
+    @username = user_stuff[:login]
+    @avatar = user_stuff[:avatar_url]
+
+    @starred = User.starred_repos(user)
+    @followers = User.followers(user)
+    @following = User.following(user)
+    @commits = User.commits(user)
+    @repositories = User.repositories(user)
+    @organizations = User.organizations(user)
   end
 
 end
