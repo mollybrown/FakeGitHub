@@ -1,4 +1,8 @@
-<h1>Sign in to GitHub</h1>
-
-<%= link_to "Sign In",
-"https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_KEY']}" %>
+<div class="container">
+  <div class="login-box">
+    <h3>Sign in to FakeGitHub</h3>
+    <div class="btn btn-success">
+      <%= link_to "Sign In","https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_KEY']}", class:"btn" %>
+    </div>
+  </div>
+</div>
