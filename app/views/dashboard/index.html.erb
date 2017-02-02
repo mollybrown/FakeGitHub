@@ -36,7 +36,10 @@
           <tbody>
           <% @repositories.each do |repo| %>
             <tr>
-              <td><%= link_to repo[:name], (repo[:html_url]) %></br><%= repo[:description] %></td>
+              <td>
+                <h4><%= link_to repo[:name], (repo[:html_url]) %></h4>
+                <p><%= repo[:description] %></p>
+              </td>
               <td><%= repo[:language] %></td>
             </tr>
           <% end %>
