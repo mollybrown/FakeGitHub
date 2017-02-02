@@ -18,6 +18,10 @@ class GithubService
     parse(@github_api_root.get("users/#{@user["username"]}/events"))
   end
 
+  def get_following_commits
+    parse(@github_api_root.get("users/#{@user["username"]}/received_events"))
+  end
+
   def get_repositories
     parse(@github_api_root.get("users/#{@user["username"]}/repos"))
   end

@@ -40,6 +40,22 @@ describe GithubService do
     end
   end
 
+  context ".get_following_commits" do
+    it "returns commits info for followed users" do
+      VCR.use_cassette("github_service.get_following_commits") do
+        raw_following_commits_info = GithubService.new(@user).get_following_commits
+        expect(raw_following_commits_info).to be_an(Array)
+        expect(raw_following_commits_info.count).to eq(30)
+
+        raw_followed_commit_info = raw_following_commits_info.first
+
+        expect(raw_followed_commit_info).to be_an(Hash)
+        expect(raw_followed_commit_info).to have_key(:repo)
+        expect(raw_followed_commit_info).to include(:type=>"WatchEvent")
+      end
+    end
+  end
+
   context ".get_repositories" do
     it "returns user repositories info" do
       VCR.use_cassette("github_service.get_repositories") do

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "validations" do
-    
+
     before(:all) do
       @user = User.new(uid: "1234567", username: "githubuser", token: ENV["token"])
     end

@@ -1,9 +1,5 @@
 class User < ApplicationRecord
 
-  # def initialize(user)
-  #   GithubService.new(user)
-  # end
-
   def self.from_omniauth(auth_info)
     where(uid: auth_info[:uid]).first_or_create do |user|
       user.uid       = auth_info.uid
@@ -39,11 +35,14 @@ class User < ApplicationRecord
   end
 
   def self.commits(user)
-    commits_array = []
-    result = GithubService.new(user).get_commits
-
-    commits_array = result.map do |push_event|
+    (GithubService.new(user).get_commits).map do |push_event|
       push_event[:payload][:commits]
+    end
+  end
+
+  def self.following_commits(user)
+    (GithubService.new(user).get_following_commits).map do |watch_event|
+      watch_event[:payload][:commits]
     end
   end
 

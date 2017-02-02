@@ -45,8 +45,12 @@
           <% end %>
           </tbody>
         </table>
-        <h2>Recent Activity/Commits</h1>
+        <h2>My Recent Activity/Commits</h1>
           <% @commits.each do |commit| %>
+            <%= commit %>
+          <% end %>
+        <h2>Recent Activity/Commits of users I follow</h1>
+          <% @following_commits.each do |commit| %>
             <%= commit %>
           <% end %>
       </div>

@@ -14,6 +14,7 @@ class DashboardController < ApplicationController
     @commits = User.commits(user)
     @repositories = User.repositories(user)
     @organizations = User.organizations(user)
+    @following_commits = User.following_commits(user)
   end
 
 end
