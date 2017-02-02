@@ -1,5 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
+    <!-- <div class="nav navbar-nav navbar-left">
+      <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+      <a class="navbar-brand" href="#">FakeGitHub</a>
+    </div> -->
     <div class="nav navbar-nav navbar-right">
       <a href="#">Repositories <span class="badge"><%= @repositories.count %></span></a>
       <a href="#">Starred <span class="badge"><%= @starred.count %></span></a>
@@ -16,22 +20,31 @@
           <%= image_tag(@avatar) %>
           <h3><%= @name %></h3>
           <h4><%= @username %></h4>
+          <hr>
+          <p><%= @location %></p>
+          <p><%= @email %></p>
+          <hr>
           <h4>Organizations</h4>
             <% @organizations.each do |org| %>
               <li><%= org %></li>
             <% end %>
         </div>
-        <hr>
       </div>
       <div class="col-md-8">
-        <h1>Recent Activity/Commits</h1>
+        <h2>Repositories</h1>
+        <table class="table">
+          <tbody>
+          <% @repositories.each do |repo| %>
+            <tr>
+              <td><%= link_to repo[:name], (repo[:html_url]) %></br><%= repo[:description] %></td>
+              <td><%= repo[:language] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <h2>Recent Activity/Commits</h1>
           <% @commits.each do |commit| %>
             <%= commit %>
-          <% end %>
-        <hr>
-        <h1>Repositories</h1>
-          <% @repositories.each do |repo| %>
-            <li><%= repo[:name] %></li>
           <% end %>
       </div>
     </div>

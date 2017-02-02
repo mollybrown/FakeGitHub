@@ -5,7 +5,29 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+end
 # Add additional requires below this line. Rails is not loaded until this point!
+
+# OmniAuth.config.test_mode = true
+#   omniauth_hash = { 'provider' => 'github',
+#                     'uid' => '8581642',
+#                     'info' => {
+#                         'name' => 'Molly Rachel Brown',
+#                         'email' => 'mollbrown@gmail.com',
+#                         'nickname' => 'mollybrown'
+#                     },
+#                     'extra' => {'raw_info' =>
+#                                     { 'location' => 'Denver',
+#                                     }
+#                     }
+#   }
+#
+#   OmniAuth.config.add_mock(:github, omniauth_hash)
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

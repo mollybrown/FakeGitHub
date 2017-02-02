@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/mollybrown
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Authorization:
+      - token 2bf42aac76350242875b4e8da9b91777527bb453
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 02 Feb 2017 03:54:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1486011267'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"3aa5e2b95b54429b4213bb5a010ea86a"
+      Last-Modified:
+      - Thu, 02 Feb 2017 02:37:59 GMT
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 322e84af28de50b15bb1
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 8166eb1845e56d99ba68a6b1065016c1
+      X-Github-Request-Id:
+      - CCF6:2B004:678B8FD:831F8BA:5892AD73
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"mollybrown","id":8581642,"avatar_url":"https://avatars.githubusercontent.com/u/8581642?v=3","gravatar_id":"","url":"https://api.github.com/users/mollybrown","html_url":"https://github.com/mollybrown","followers_url":"https://api.github.com/users/mollybrown/followers","following_url":"https://api.github.com/users/mollybrown/following{/other_user}","gists_url":"https://api.github.com/users/mollybrown/gists{/gist_id}","starred_url":"https://api.github.com/users/mollybrown/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mollybrown/subscriptions","organizations_url":"https://api.github.com/users/mollybrown/orgs","repos_url":"https://api.github.com/users/mollybrown/repos","events_url":"https://api.github.com/users/mollybrown/events{/privacy}","received_events_url":"https://api.github.com/users/mollybrown/received_events","type":"User","site_admin":false,"name":"Molly
+        Rachel Brown","company":"@turingschool","blog":"mollyrachelbrown.com","location":"Denver,
+        Colorado","email":"mollyrachelbrown@gmail.com","hireable":true,"bio":"Back-End
+        Engineering Student","public_repos":27,"public_gists":7,"followers":0,"following":2,"created_at":"2014-08-28T15:56:36Z","updated_at":"2017-02-02T02:37:59Z","private_gists":1,"total_private_repos":0,"owned_private_repos":0,"disk_usage":12204,"collaborators":0,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":0}}'
+    http_version: 
+  recorded_at: Thu, 02 Feb 2017 03:54:27 GMT
+recorded_with: VCR 3.0.3

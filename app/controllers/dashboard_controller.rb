@@ -3,6 +3,8 @@ class DashboardController < ApplicationController
     user = User.find(session[:user_id])
     user_stuff = User.user_info(user)
     @name = user_stuff[:name]
+    @location = user_stuff[:location]
+    @email = user_stuff[:email]
     @username = user_stuff[:login]
     @avatar = user_stuff[:avatar_url]
 

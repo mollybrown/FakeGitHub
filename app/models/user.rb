@@ -1,5 +1,9 @@
 class User < ApplicationRecord
 
+  # def initialize(user)
+  #   GithubService.new(user)
+  # end
+
   def self.from_omniauth(auth_info)
     where(uid: auth_info[:uid]).first_or_create do |user|
       user.uid       = auth_info.uid

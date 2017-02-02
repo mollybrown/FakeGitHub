@@ -19,10 +19,12 @@ gem 'omniauth-oauth2'
 gem "omniauth-github"
 gem 'faraday'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem "rspec-rails"
+  gem 'capybara'
 end
 
 group :development do
@@ -30,6 +32,11 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
