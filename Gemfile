@@ -20,6 +20,7 @@ gem "omniauth-github"
 gem 'faraday'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
+gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'byebug', platform: :mri

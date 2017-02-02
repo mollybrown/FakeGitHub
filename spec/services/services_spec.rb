@@ -4,7 +4,6 @@ describe GithubService do
   before(:all) do
     @user = User.create(uid: "8581642",
                         username: "mollybrown",
-                        token: "b34c5b69b9861c571c35c63c6ceb07e6599031b5",
                         created_at: "2017-02-01 06:14:22",
                         updated_at: "2017-02-01 06:14:22")
   end
