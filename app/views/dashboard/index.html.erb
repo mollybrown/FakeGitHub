@@ -1,9 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <!-- <div class="nav navbar-nav navbar-left">
-      <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-      <a class="navbar-brand" href="#">FakeGitHub</a>
-    </div> -->
+    <div class="nav navbar-nav navbar-left">
+        <a><%= link_to "Sign Out", github_logout_path, class: "logout" %></a>
+        <a class="navbar-brand" href="#">FakeGitHub</a>
+    </div>
     <div class="nav navbar-nav navbar-right">
       <a href="#">Repositories <span class="badge"><%= @repositories.count %></span></a>
       <a href="#">Starred <span class="badge"><%= @starred.count %></span></a>
