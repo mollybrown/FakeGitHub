@@ -16,32 +16,29 @@
 <div class="main">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <div class="avatar">
-          <%= image_tag(@user_profile[:avatar_url]) %>
-          <h3><%= @user_profile[:name] %></h3>
-          <h4><%= @user_profile[:login] %></h4>
-          <hr>
-          <p><%= @user_profile[:location] %></p>
-          <p><%= @user_profile[:email] %></p>
-          <hr>
-          <h4>Organizations</h4>
-            <% @organizations.each do |org| %>
-              <li><%= org %></li>
-            <% end %>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <h2>Repositories</h1>
+      <div class="col-md-6">
+        <h2>My Recent Activity/Commits</h2>
         <table class="table">
           <tbody>
-          <% @repositories.each do |repo| %>
+          <% @commits.each do |commit| %>
             <tr>
               <td>
-                <h4><%= link_to repo[:name], (repo[:html_url]) %></h4>
-                <p><%= repo[:description] %></p>
+                <%= commit %>
               </td>
-              <td><%= repo[:language] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <h2>Activity/Commits of followed users</h2>
+        <table class="table">
+          <tbody>
+          <% @following_commits.each do |commit| %>
+            <tr>
+              <td>
+                <%= commit %>
+              </td>
             </tr>
           <% end %>
           </tbody>

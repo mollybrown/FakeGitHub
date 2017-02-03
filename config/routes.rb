@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :github_logout
 
   resources :dashboard, only: [:index]
-  resources :repositories, only: [:index]
+  resources :events,    only: [:index]
 end
