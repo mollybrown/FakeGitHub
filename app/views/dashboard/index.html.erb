@@ -14,7 +14,7 @@
           <hr>
           <h4>Organizations</h4>
             <% @organizations.each do |org| %>
-              <li><%= org %></li>
+              <li><%= org[:login] %></li>
             <% end %>
         </div>
       </div>

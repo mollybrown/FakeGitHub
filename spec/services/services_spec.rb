@@ -77,11 +77,11 @@ describe GithubService do
       VCR.use_cassette("github_service.get_organizations") do
         raw_orgs_info = GithubService.new(@user).get_organizations
         expect(raw_orgs_info).to be_an(Array)
-        expect(raw_orgs_info.count).to eq(0)
+        expect(raw_orgs_info.count).to eq(1)
 
         raw_org_info = raw_orgs_info.first
 
-        expect(raw_org_info).to eq(nil)
+        expect(raw_org_info).to include(:login => "APICuriousTestOrg")
       end
     end
   end

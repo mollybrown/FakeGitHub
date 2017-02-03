@@ -27,7 +27,7 @@ class GithubService
   end
 
   def get_organizations
-    parse(@github_api_root.get("user/orgs"))
+    parse(@github_api_root.get("users/#{@user["username"]}/orgs"))
   end
 
   def get_starred_repos
