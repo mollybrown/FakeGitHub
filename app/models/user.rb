@@ -36,13 +36,13 @@ class User < ApplicationRecord
 
   def self.commits(user)
     (GithubService.new(user).get_commits).map! do |push_event|
-      push_event[:payload][:issue]
+      {repo: push_event[:repo][:name]}
     end
   end
 
   def self.following_commits(user)
     (GithubService.new(user).get_following_commits).map! do |watch_event|
-      watch_event[:payload][:issue]
+      {repo: watch_event[:repo][:name]}
     end
   end
 

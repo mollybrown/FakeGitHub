@@ -23,7 +23,7 @@
           <% @commits.each do |commit| %>
             <tr>
               <td>
-                <%= commit %>
+                <%= commit[:repo] %>
               </td>
             </tr>
           <% end %>
@@ -37,7 +37,7 @@
           <% @following_commits.each do |commit| %>
             <tr>
               <td>
-                <%= commit %>
+                <%= commit[:repo] %>
               </td>
             </tr>
           <% end %>
