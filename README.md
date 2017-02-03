@@ -2,7 +2,7 @@
 
 ![FakeGitHub Screenshot](/app/assets/images/fakegithub.png)
 
-FakeGitHub is my take on replicating the GitHub UI using the GitHub API with the goal of learning about how to consume and work with data from public APIs. The original project spec can be found [here](http://backend.turing.io/module3/projects/apicurious).
+FakeGitHub is my take on replicating the GitHub UI using the GitHub API. The original project spec can be found [here](http://backend.turing.io/module3/projects/apicurious).
 
 ## Learning Goals
  - Learn to consume data from third-party APIs
@@ -16,8 +16,6 @@ FakeGitHub is my take on replicating the GitHub UI using the GitHub API with the
  - Mimic the interface functionality of one online service from the list below.
  - Consume an external API to get real data and interact with a third-party service.
  - Do NOT use a gem to communicate with the external API (Omniauth is OK)
-
-<hr>
 
 ## Getting Started
 
@@ -51,7 +49,7 @@ $ rake db:create
 $ rake db:migrate
 ```
 
-Start the Rails server 
+Start the Rails server
 
 ```
 $ rails s

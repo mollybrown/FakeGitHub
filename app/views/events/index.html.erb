@@ -1,18 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="nav navbar-nav navbar-left">
-        <a><%= link_to "Sign Out", github_logout_path, class: "logout" %></a>
-        <a><%= link_to "Activty Feed", events_path %></a>
-        <a><%= link_to "FakeGitHub", dashboard_index_path, class: "navbar-brand" %></a>
-    </div>
-    <div class="nav navbar-nav navbar-right">
-      <li>Repositories <span class="badge"><%= @repositories.count %></span></li>
-      <li>Starred <span class="badge"><%= @starred.count %></span></li>
-      <li>Followers <span class="badge"><%= @followers.count %></span></li>
-      <li>Following <span class="badge"><%= @following.count %></span></li>
-    </div>
-  </div>
-</nav>
+<%= render partial: 'layouts/navbar' %>
+
 <div class="main">
   <div class="container">
     <div class="row">
